@@ -35,7 +35,9 @@ defmodule Elixometer.Mixfile do
 
   defp deps do
     [
-      {:exometer_core, "~>1.4.0"},
+      {:exometer_core, github: "Feuerlabs/exometer_core", ref: "9206b28d045b395abd1b86cc794223ec9aeeb0ea"},
+      {:edown, github: "uwiger/edown", tag: "0.7", override: true},
+      {:meck, github: "eproxus/meck", tag: "0.8.2", override: true},
       {:excoveralls, "~>0.5.4", only: :test},
       {:pobox, "~>1.0.2"}
     ]
