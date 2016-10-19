@@ -20,8 +20,7 @@ defmodule Elixometer.Mixfile do
 
   def application do
      [mod: {Elixometer.App, []},
-      applications: [:lager, :exometer_core, :pobox],
-      erl_opts: [parse_transform: "lager_transform"],
+      applications: [:exometer_core, :pobox],
       env: default_config(Mix.env)
      ]
   end
@@ -36,9 +35,6 @@ defmodule Elixometer.Mixfile do
 
   defp deps do
     [
-      #lager 3.2.1 is needed for erl19 because of
-      # https://github.com/basho/lager/pull/321
-      {:lager, ">= 3.2.1", override: true},
       {:exometer_core, "~>1.4.0"},
       {:excoveralls, "~>0.5.4", only: :test},
       {:pobox, "~>1.0.2"}
